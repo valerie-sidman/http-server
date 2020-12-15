@@ -9,11 +9,15 @@
   "description": "task",
   "main": "index.js",
   "scripts": {
+    "prestart":"npm install",
     "start": "pm2 start server.js",
     "watch": "pm2 start server.js --watch",
     "stop": "pm2 stop server",
     "restart": "pm2 restart server",
     "logs": "pm2 logs server"
+  },
+  "engines": {
+    "node": "11.x"
   },
   "author": "Valerie Sidorova",
   "license": "MIT",
