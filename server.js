@@ -45,7 +45,7 @@ app.use(async (ctx) => {
       }
       return;
     case 'createTicket':
-      ctx.request.body.id = tickets.length;
+      ctx.request.body.id = (tickets.length).toString();
       tickets.push(ctx.request.body);
       ctx.response.status = 201;
       return;
