@@ -54,6 +54,15 @@ app.use(async (ctx) => {
         .findIndex((ticket) => ticket.id === id), 1, ctx.request.body);
       ctx.response.status = 200;
       return;
+    case 'changeStatus':
+      tickets.forEach((ticket) => {
+        if (ticket.id === id) {
+          // eslint-disable-next-line no-param-reassign
+          ticket.status = !ticket.status;
+        }
+      });
+      ctx.response.status = 200;
+      return;
     case 'deleteTicket':
       tickets.splice(tickets.findIndex((ticket) => ticket.id === id), 1);
       ctx.response.status = 200;
