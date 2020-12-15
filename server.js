@@ -63,4 +63,4 @@ app.use(async (ctx) => {
   }
 });
 
-app.listen(port);
+app.listen(port, () => console.log(`HelpDesk server listening on port ${port}!`));
