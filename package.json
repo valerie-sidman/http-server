@@ -9,7 +9,7 @@
   "description": "task",
   "main": "index.js",
   "scripts": {
-    "prestart": "yarn install",
+    "prestart": "yarn install && yarn global add pm2",
     "start": "pm2 start server.js",
     "watch": "pm2 start server.js --watch",
     "stop": "pm2 stop server",
