@@ -4,6 +4,11 @@ const cors = require('koa2-cors');
 
 const app = new Koa();
 
+let port = process.env.PORT;
+if (port == null || port === '') {
+  port = 8000;
+}
+
 app.use(koaBody({ multipart: true }));
 app.use(cors({
   origin: '*',
@@ -58,4 +63,4 @@ app.use(async (ctx) => {
   }
 });
 
-app.listen(3000);
+app.listen(port);
