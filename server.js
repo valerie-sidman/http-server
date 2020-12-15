@@ -58,7 +58,7 @@ app.use(async (ctx) => {
       tickets.forEach((ticket) => {
         if (ticket.id === id) {
           // eslint-disable-next-line no-param-reassign
-          ticket.status = !ticket.status;
+          ticket.status = (!(ticket.status === 'true')).toString();
         }
       });
       ctx.response.status = 200;
